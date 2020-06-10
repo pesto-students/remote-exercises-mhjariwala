@@ -21,10 +21,10 @@ describe('negativeIndex', () => {
     expect([...fixture]).toEqual([0, 'bar', 'baz']);
     fixture[1] = 1;
     expect([...fixture]).toEqual([0, 1, 'baz']);
-    // fixture[-1] = -1;
-    // expect([...fixture]).toEqual([0, 1, -1]);
-    // fixture[-2] = -2;
-    // expect([...fixture]).toEqual([0, -2, -1]);
+    fixture[-1] = -1;
+    expect([...fixture]).toEqual([0, 1, -1]);
+    fixture[-2] = -2;
+    expect([...fixture]).toEqual([0, -2, -1]);
   });
 
   test('only accepts arrays', () => {

@@ -1,0 +1,8 @@
+.grocery-list {
+    border: thin solid black;
+    padding: 10px;
+}
+
+.grocery-list .grocery-item:not(:last-of-type) {
+    margin-bottom: 10px;
+}

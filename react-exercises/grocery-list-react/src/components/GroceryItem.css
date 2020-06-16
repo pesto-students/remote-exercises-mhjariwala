@@ -1,0 +1,13 @@
+.grocery-item {
+    padding: 10px;
+    border: thin solid lightgray;
+    cursor: pointer;
+}
+
+.grocery-item:hover {
+    border-color: black;
+}
+
+.grocery-item.purchased-item {
+    color: red;
+}

@@ -1,0 +1,44 @@
+.text-center {
+  text-align: center;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.d-input {
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  border: thin solid lightgray;
+}
+
+.d-button {
+  border-radius: 5px;
+  border: thin solid lightgray;
+  min-width: 50px;
+  padding: 8px;
+  background: lightgray;
+}
+
+.d-input:hover, .d-button:hover:not(:disabled) {
+  border-color: black;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+

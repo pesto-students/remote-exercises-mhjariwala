@@ -4,7 +4,7 @@
 
 Game URL: _____
 
-Mockup URL: _____
+Mockup URL: https://balsamiq.cloud/si1snr8/phyc6ut
 
 ## How to do the question
 - Make a new branch `snake-game`.

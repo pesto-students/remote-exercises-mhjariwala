@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import SnakeGame from './components/SnakeGame';
+import { GameContextProvider } from './context/SnakeGameContext';
+import { NO_OF_COLUMNS, NO_OF_ROWS, CEIL_HEIGHT, CEIL_WIDTH } from './utilities/constants';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" data-testid="app">
+      <GameContextProvider>
+        <SnakeGame
+          noOfRows={NO_OF_ROWS}
+          noOfColumns={NO_OF_COLUMNS}
+          ceilWidth={CEIL_WIDTH}
+          ceilHeight={CEIL_HEIGHT} />
+      </GameContextProvider>
     </div>
   );
 }

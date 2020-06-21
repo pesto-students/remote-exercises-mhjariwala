@@ -1,38 +1,96 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.food {
+  background: red;
+  border-radius: 50%;
+}
+
+.snake {
+  background: white;
+}
+
+.game-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  padding: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game-score {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  outline: thin solid white;
+}
+
+.game-over-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.app-button {
+  background: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app-button:active {
+  transform: scale(0.9);
+  outline: none;
+}
+
+.app-button:disabled {
+  opacity: 0.5;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.icon {
+  font-size: 30px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  outline: thin solid white;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }

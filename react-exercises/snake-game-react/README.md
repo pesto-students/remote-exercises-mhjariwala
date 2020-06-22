@@ -2,7 +2,7 @@
 
 # Submission
 
-Game URL: _____
+Game URL: https://snake-game-2d.netlify.app
 
 Mockup URL: https://balsamiq.cloud/si1snr8/phyc6ut
 

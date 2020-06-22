@@ -36,6 +36,8 @@ function SnakeGame(props) {
         }
 
         updateGameData(gridObj);
+        
+        //eslint-disable-next-line
     }, [noOfRows, noOfColumns, ceilWidth, ceilHeight])
 
     useEffect(() => {
@@ -50,6 +52,8 @@ function SnakeGame(props) {
         return () => {
             clearInterval(jobNo);
         }
+
+        //eslint-disable-next-line
     }, [gameState])
 
     function moveSnake() {

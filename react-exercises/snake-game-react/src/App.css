@@ -1,0 +1,93 @@
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food {
+  background: red;
+  border-radius: 50%;
+}
+
+.snake {
+  background: white;
+}
+
+.game-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+.game-score {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  outline: thin solid white;
+}
+
+.game-over-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.app-button {
+  background: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app-button:active {
+  transform: scale(0.9);
+  outline: none;
+}
+
+.app-button:disabled {
+  opacity: 0.5;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.icon {
+  font-size: 20px;
+  color: black;
+  outline: none;
+  width: 40px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}

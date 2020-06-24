@@ -2,14 +2,14 @@ import React, { useContext, useEffect } from 'react';
 import Ceil from './Ceil';
 import { SnakeGameContext } from '../context/SnakeGameContext';
 import { GAME_STATUSES, DIRECTIONS_MAPPER } from '../utilities/constants';
-import { isFood, isSnake, isOppositeDirection, isSameDirection } from '../utilities/utils';
+import { isFood, isSnake } from '../utilities/utils';
 
 const { STARTED } = GAME_STATUSES
 const { LEFT, RIGHT, TOP, BOTTOM } = DIRECTIONS_MAPPER
 
 function SnakeBoard(props) {
-    const { gameState, updateGameData } = useContext(SnakeGameContext);
-    const { grid, foodPosition, snake, gridHeight, gridWidth, DIRECTION } = gameState
+    const { gameState, updateDirection } = useContext(SnakeGameContext);
+    const { grid, foodPosition, snake, gridHeight, gridWidth } = gameState
     const { ceilHeight, ceilWidth, state } = gameState
     
     useEffect(() => {
@@ -40,11 +40,7 @@ function SnakeBoard(props) {
         }
 
         if(direction){
-            if(isSameDirection(direction.value, DIRECTION) || isOppositeDirection(direction.value, DIRECTION)){
-                return;   
-            }
-
-            updateGameData({ DIRECTION: direction.value });
+            updateDirection(direction);
         }
     }
 

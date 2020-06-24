@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { GAME_STATUSES, DIRECTIONS_MAPPER, NO_OF_ROWS, NO_OF_COLUMNS, CEIL_WIDTH, CEIL_HEIGHT } from '../utilities/constants';
-import { getRandomFoodLocation, getInitialSnakeState, getGridWidth, getGridHeight } from '../utilities/utils';
+import { getRandomFoodLocation, getInitialSnakeState, getGridWidth, getGridHeight, isSameDirection, isOppositeDirection } from '../utilities/utils';
 
 const { NOT_START, STARTED } = GAME_STATUSES
 const SnakeGameContext = createContext();
@@ -68,12 +68,25 @@ const GameContextProvider = (props) => {
         return row === foodRow && col === foodCol;
     }
 
+    function updateDirection(direction) {
+        if(direction){
+            const { DIRECTION } = gameState
+
+            if(isSameDirection(direction.value, DIRECTION) || isOppositeDirection(direction.value, DIRECTION)){
+                return;   
+            }
+
+            updateGameData({ DIRECTION: direction.value });
+        }
+    }
+
     const value = {
         gameState,
         updateGameData,
         startGame,
         isCollide,
-        isSnakeGotFood
+        isSnakeGotFood,
+        updateDirection
     }
 
     return (

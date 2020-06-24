@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { SnakeGameContext } from '../context/SnakeGameContext';
+import { DIRECTIONS_MAPPER } from '../utilities/constants';
 
 function IconsContainer() {
+    const { updateDirection } = useContext(SnakeGameContext);
+    
+    function handleBtnClick(direction) {
+        updateDirection(direction);
+    }
+
     return (
         <div className="icons-container">
-            <div className="icon">
+            <button
+                title="UP"
+                className="icon app-button"
+                onClick={() => { handleBtnClick(DIRECTIONS_MAPPER.TOP) }}>
                 &#129045;
-            </div>
-            <div className="icon">
-                &#129047;
-            </div>
-            <div className="icon">
-                &#129044;
-            </div>
-            <div className="icon">
+            </button>
+            <button
+                title="RIGHT"
+                className="icon app-button"
+                onClick={() => { handleBtnClick(DIRECTIONS_MAPPER.RIGHT) }}>
                 &#129046;
-            </div>
+            </button>
+            <button
+                title="DOWN"
+                className="icon app-button"
+                onClick={() => { handleBtnClick(DIRECTIONS_MAPPER.BOTTOM) }}>
+                &#129047;
+            </button>
+            <button
+                title="LEFT"
+                className="icon app-button"
+                onClick={() => { handleBtnClick(DIRECTIONS_MAPPER.LEFT) }}>
+                &#129044;
+            </button>
         </div>
     );
 }
